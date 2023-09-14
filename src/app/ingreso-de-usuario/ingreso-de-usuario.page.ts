@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CompartirVarService } from '../compartir-var.service';
 
 @Component({
   selector: 'app-ingreso-de-usuario',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ingreso-de-usuario.page.scss'],
 })
 export class IngresoDeUsuarioPage implements OnInit {
+  inputValue: string = '';
+  currentSharedValue: any = null; 
+  constructor(private compartirVarService: CompartirVarService) {
+  }
 
-  constructor() { }
-
+  setSharedVariable() {
+    this.compartirVarService.setSharedVariable(this.inputValue);
+    this.currentSharedValue = this.inputValue; 
+  }
   ngOnInit() {
   }
+
 
 }
