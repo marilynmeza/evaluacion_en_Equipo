@@ -1,13 +1,59 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Inicia Sesión</ion-title>
+<ion-header [translucent]="true" >
+  <ion-toolbar style="background-color: red;" >
+    <ion-title style="color: blueviolet; font-family:Verdana, Geneva, Tahoma, sans-serif;">Bienvenido a engánchate QR </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">usuario</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="ion-text-center">
+  <h1 style="color: blue;">Ingresa a tu Cuenta</h1>
+  
+  <ion-input type="text" placeholder="Nombre de usuario" label="Nombre: "
+            labelPlacement="floating"
+            [clearInput]="true"
+            ngModel
+            text
+            fill="solid"></ion-input>
+
+            <!-- labelPlacement ETIQUETA FLOTANTE,ES DECIR CUANDO EL MOUSE 
+            HACE CLICK LA ETIQUETA SE MINIMIZA -->
+  <ion-input type="password" 
+            placeholder="******"
+            helperText="Debe ingresar una contraseña"
+            errorText="La contraseña no es válida"
+            label="Contraseña:"
+            labelPlacement="floating"  
+            [clearInput]="true"
+            ngModel password
+            fill="solid"
+            color="success"></ion-input>
+  <ion-icon name=""></ion-icon>
+  <br>
+  <br>
+
+  <!-- REDIRECCIONA AL USUARIO -->
+  <ion-button [routerLink]="['/inicio']">
+    INGRESA
+    <ion-icon slot="icon-only" name="accessibility-outline"  ></ion-icon>
+  </ion-button>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- LINK PARA RESTABLECER CONTRASEÑA -->
+  <ion-label [routerLink]="['/restablecer-contrasena']" color="danger">Si olvidaste tu contraseña has click aquí</ion-label>
+  </div>
+    
+
+  
 </ion-content>
+
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Copy Rigth </ion-title>
+    <label >@ Calderón - Meza</label>
+  </ion-toolbar>
+</ion-footer>
