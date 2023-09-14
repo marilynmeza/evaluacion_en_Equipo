@@ -1,25 +1,25 @@
-
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Bienvenido!!!</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content [fullscreen]="true">
-  
-  
-    <ion-card>
-      <img src="\assets\asistencia.png" alt="IMAGEN DE PRUEBA">
-    </ion-card>
-    
-  
+  <ion-card>
+    <img src="\assets\asistencia.png" alt="IMAGEN DE PRUEBA">
+  </ion-card>
+  <br>
+  <div class="ion-text-center">
+    <ion-button [routerLink]="['/ingreso-de-usuario']" color="success">
+      Ir a Pagina de Inicio de Sesión
+      <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
+    </ion-button>
+  </div>
 </ion-content>
-
 
 <ion-footer>
   <ion-toolbar>
     <ion-title>Copy Rigth </ion-title>
-    <label >@ Calderón - Meza</label>
+    <label>@ Calderón - Meza</label>
   </ion-toolbar>
 </ion-footer>
