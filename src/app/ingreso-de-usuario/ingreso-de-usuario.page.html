@@ -11,9 +11,9 @@
   <ion-input type="text" placeholder="Nombre de usuario" label="Nombre: "
             labelPlacement="floating"
             [clearInput]="true"
-            ngModel
             text
-            fill="solid"></ion-input>
+            [(ngModel)]="inputValue"
+            fill="solid" ></ion-input>
 
             <!-- labelPlacement ETIQUETA FLOTANTE,ES DECIR CUANDO EL MOUSE 
             HACE CLICK LA ETIQUETA SE MINIMIZA -->
@@ -31,12 +31,16 @@
   <br>
   <br>
 
+
+
   <!-- REDIRECCIONA AL USUARIO -->
-  <ion-button [routerLink]="['/inicio']">
+  <ion-button (click)="setSharedVariable()" [routerLink]="['/inicio']">
     INGRESA
     <ion-icon slot="icon-only" name="accessibility-outline"  ></ion-icon>
   </ion-button>
 
+
+  <h1>VARIABLE ACA: {{ currentSharedValue }}</h1>
   <br>
   <br>
   <br>

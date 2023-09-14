@@ -1,6 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Bienvenido!!!</ion-title>
+
+    <ion-title>
+      <h1 *ngIf="currentSharedValue === ''; else valueTemplate" style="color: rgb(150, 150, 150);">Bienvenido Usuario</h1>
+      <ng-template #valueTemplate>
+        <h1 style="color: rgb(150, 150, 150);">Bienvenido {{ currentSharedValue | titlecase }}</h1>
+      </ng-template>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -19,7 +25,9 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-title>Copy Rigth </ion-title>
-    <label>@ Calderón - Meza</label>
+   <div class="ion-text-center">
+    <ion-title>Copyright </ion-title>
+    <label style="color: rgb(139, 139, 139);">@ Calderón - Meza</label>
+  </div>
   </ion-toolbar>
 </ion-footer>
