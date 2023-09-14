@@ -7,7 +7,6 @@ import { RestablecerContrasenaPage } from './restablecer-contrasena.page';
 import { SharedModule } from '../shared/shared.module';
 
 
-
 @NgModule({
   imports: [
     CommonModule,

@@ -1,10 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-
     <ion-title>
-      <h1 *ngIf="currentSharedValue === ''; else valueTemplate" style="color: rgb(150, 150, 150);">Bienvenido Usuario</h1>
+      <h1 *ngIf="currentSharedValue === ''; else valueTemplate" class="titulo-header" style="color: #3880ff;">Bienvenido Usuario</h1>
       <ng-template #valueTemplate>
-        <h1 style="color: rgb(150, 150, 150);">Bienvenido {{ currentSharedValue | titlecase }}</h1>
+        <h1 class="titulo-header" style="color: #3880ff; font-weight: bolder;">Bienvenido {{ currentSharedValue | titlecase }}</h1>
       </ng-template>
     </ion-title>
   </ion-toolbar>
@@ -16,9 +15,8 @@
   </ion-card>
   <br>
   <div class="ion-text-center">
-    <ion-button [routerLink]="['/ingreso-de-usuario']" color="success">
+    <ion-button [routerLink]="['/ingreso-de-usuario']" color="primary">
       Ir a Pagina de Inicio de Sesión
-      <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
     </ion-button>
   </div>
 </ion-content>
