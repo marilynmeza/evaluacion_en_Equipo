@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CompartirVarService {
 
-  sharedVariable: any = null;
+  sharedVariable: any = null ;
 
   setSharedVariable(value: any) {
     this.sharedVariable = value;

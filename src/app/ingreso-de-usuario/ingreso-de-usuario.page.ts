@@ -12,7 +12,7 @@ export class IngresoDeUsuarioPage implements OnInit {
   constructor(private compartirVarService: CompartirVarService) {
   }
 
-  setSharedVariable() {
+  setVarNombre() {
     this.compartirVarService.setSharedVariable(this.inputValue);
     this.currentSharedValue = this.inputValue; 
   }
