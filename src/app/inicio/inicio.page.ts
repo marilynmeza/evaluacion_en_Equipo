@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CompartirVarService } from '../compartir-var.service';
 
 
-
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
@@ -16,8 +15,6 @@ export class InicioPage implements OnInit {
       this.currentSharedValue = this.compartirVarService.getSharedVariable();
     }
   }
-
-
   ngOnInit() {
   }
 

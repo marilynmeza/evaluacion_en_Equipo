@@ -1,59 +1,32 @@
-<ion-header [translucent]="true" >
-  <ion-toolbar style="background-color: red;" >
-    <ion-title style="color: blueviolet; font-family:Verdana, Geneva, Tahoma, sans-serif;">Bienvenido a engánchate QR </ion-title>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titulo-header" >
+      Bienvenido a engánchate QR
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="ion-text-center">
-  <h1 style="color: blue;">Ingresa a tu Cuenta</h1>
-  
-  <ion-input type="text" placeholder="Nombre de usuario" label="Nombre: "
-            labelPlacement="floating"
-            [clearInput]="true"
-            text
-            [(ngModel)]="inputValue"
-            fill="solid" ></ion-input>
-
-            <!-- labelPlacement ETIQUETA FLOTANTE,ES DECIR CUANDO EL MOUSE 
-            HACE CLICK LA ETIQUETA SE MINIMIZA -->
-  <ion-input type="password" 
-            placeholder="******"
-            helperText="Debe ingresar una contraseña"
-            errorText="La contraseña no es válida"
-            label="Contraseña:"
-            labelPlacement="floating"  
-            [clearInput]="true"
-            ngModel password
-            fill="solid"
-            color="success"></ion-input>
-  <ion-icon name=""></ion-icon>
-  <br>
-  <br>
-
-
-
-  <!-- REDIRECCIONA AL USUARIO -->
-  <ion-button (click)="setVarNombre()" [routerLink]="['/inicio']">
-    INGRESA
-    <ion-icon slot="icon-only" name="accessibility-outline"  ></ion-icon>
-  </ion-button>
-
-
-  <h1>VARIABLE ACA: {{ currentSharedValue }}</h1>
-  <br>
-  <br>
-  <br>
-  <br>
-  <!-- LINK PARA RESTABLECER CONTRASEÑA ADEMÁS DEJA EL LINK SUBRAYADO-->
-  <a href="/restablecer-contrasena" color="danger">Si olvidaste tu contraseña has click aquí</a>
-  
+    <h1 style="color: #3880ff;">Ingresa a tu Cuenta</h1>
+    <ion-input type="text" placeholder="Nombre de usuario" label="Nombre: " labelPlacement="floating"
+      [clearInput]="true" text [(ngModel)]="inputValue" fill="solid"></ion-input>
+    <!-- labelPlacement ETIQUETA FLOTANTE,ES DECIR CUANDO EL MOUSE HACE CLICK LA ETIQUETA SE MINIMIZA -->
+    <ion-input type="password" placeholder="******"
+      errorText="La contraseña no es válida" label="Contraseña:" labelPlacement="floating" [clearInput]="true" ngModel
+      password fill="solid"></ion-input>
+    <ion-icon name=""></ion-icon>
+    <br><br>
+    <!-- REDIRECCIONA AL USUARIO -->
+    <ion-button (click)="setVarNombre()" [routerLink]="['/inicio']">
+      INGRESA
+      <ion-icon slot="icon-only" name="accessibility-outline"></ion-icon>
+    </ion-button>
+    <br><br><br>
+    <!-- LINK PARA RESTABLECER CONTRASEÑA ADEMÁS DEJA EL LINK SUBRAYADO-->
+    <!-- <a [routerLink]="/restablecer-contrasena" color="danger">Si olvidaste tu contraseña has click aquí</a> -->
+    <ion-router-link [routerLink]="['/restablecer-contrasena']" color="primary">Si olvidaste tu contraseña has click AQUI</ion-router-link>
   </div>
-    
-
-  
 </ion-content>
-
-
 
 <app-footer></app-footer>

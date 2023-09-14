@@ -1,0 +1,13 @@
+.titulo-header{
+    color: #3880ff;
+    font-weight: bolder;
+    @media (max-width: 480px) {
+        font-size: 20px; 
+    }
+    @media (min-width: 481px) and (max-width: 768px) {
+        font-size: 30px;  
+    }
+    @media (min-width: 769px) {
+        font-size: 50px;  
+    }
+}

@@ -1,28 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="ion-text-center" color="success">¿Olvidaste tu contraseña?</ion-title>
+    <ion-title class="ion-text-center titulo-header" color="primary">¿Olvidaste tu contraseña?</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content [fullscreen]="true">
   <div class="ion-text-center">
-    <h1 style="color: blue;">Restablece tu Contraseña</h1>
-
-    <ion-input type="text" placeholder="Nombre de usuario" label="Nombre: " labelPlacement="floating"
-      [clearInput]="true"></ion-input>
-    <br>
-    <br>
+    <h1 style="color: #3880ff;">Restablece tu Contraseña</h1>
+    <ion-input type="text" placeholder="Correo Electronico" label="Correo: " labelPlacement="floating"
+      [clearInput]="true" text fill="solid"></ion-input>
+    <br><br>
     <!-- REDIRECCIONA AL USUARIO -->
-    <ion-button [routerLink]="['/ingreso-de-usuario']" color="success">
+    <ion-button [routerLink]="['/ingreso-de-usuario']" color="primary">
       RECUPERA
       <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
     </ion-button>
   </div>
-
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="ingreso-de-usuario"></ion-back-button>
+  </ion-buttons>
 </ion-content>
-<ion-buttons slot="start">
-  <ion-back-button defaultHref="ingreso-de-usuario"></ion-back-button>
-</ion-buttons>
 
 <app-footer></app-footer>
