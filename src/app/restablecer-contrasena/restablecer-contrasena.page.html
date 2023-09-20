@@ -7,7 +7,11 @@
 <ion-content [fullscreen]="true">
   <div class="ion-text-center">
     <h1 style="color: #3880ff;">Restablece tu Contraseña</h1>
-    <ion-input type="text" placeholder="Correo Electronico" label="Correo: " labelPlacement="floating"
+    <ion-input type="email" placeholder="Correo Electrónico" 
+                label="Correo: " 
+                labelPlacement="floating"
+                ngModel email=""
+                errorText="E-mail NO VÁLIDO"
       [clearInput]="true" text fill="solid"></ion-input>
     <br><br>
     <!-- REDIRECCIONA AL USUARIO -->
