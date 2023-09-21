@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { IngresoDeUsuarioPageRoutingModule } from './ingreso-de-usuario-routing.module';
 import { IngresoDeUsuarioPage } from './ingreso-de-usuario.page';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     IonicModule,
     IngresoDeUsuarioPageRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   declarations: [IngresoDeUsuarioPage]
 })

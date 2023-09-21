@@ -1,31 +1,44 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="titulo-header" >
+    <ion-title class="titulo-header">
       Bienvenido a engánchate QR
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="ion-text-center">
-    <h1 style="color: #3880ff;">Ingresa a tu Cuenta</h1>
-    <ion-input type="text" placeholder="Nombre de usuario" label="Nombre: " labelPlacement="floating"
-      [clearInput]="true" text [(ngModel)]="inputValue" fill="solid"></ion-input>
-    <!-- labelPlacement ETIQUETA FLOTANTE,ES DECIR CUANDO EL MOUSE HACE CLICK LA ETIQUETA SE MINIMIZA -->
-    <ion-input type="password" placeholder="******"
-      errorText="La contraseña no es válida" label="Contraseña:" labelPlacement="floating" [clearInput]="true" ngModel
-      password fill="solid"></ion-input>
-    <ion-icon name=""></ion-icon>
-    <br><br>
-    <!-- REDIRECCIONA AL USUARIO -->
-    <ion-button (click)="setVarNombre()" [routerLink]="['/inicio']">
-      INGRESA
-      <ion-icon slot="icon-only" name="accessibility-outline"></ion-icon>
-    </ion-button>
-    <br><br><br>
-    <!-- LINK PARA RESTABLECER CONTRASEÑA ADEMÁS DEJA EL LINK SUBRAYADO-->
-    <!-- <a [routerLink]="/restablecer-contrasena" color="danger">Si olvidaste tu contraseña has click aquí</a> -->
-    <ion-router-link [routerLink]="['/restablecer-contrasena']" color="primary" style="text-decoration: underline;">Si olvidaste tu contraseña has click AQUI</ion-router-link>
+  <form [formGroup]="loginForm" (submit)="onSubmit()">
+
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input [(ngModel)]="inputValue" formControlName="email" type="email"></ion-input>
+    </ion-item>
+    <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+      <p class="error-text texto-error-login" *ngIf="loginForm.controls['email'].errors?.['required']">Correo requerido!
+      </p>
+      <p class="error-text texto-error-login" *ngIf="loginForm.controls['email'].errors?.['email']">Ingrese un correo
+        valido!</p>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+    </ion-item>
+    <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+      <p class="error-text texto-error-login" *ngIf="loginForm.controls['password'].errors?.['required']">Debe ingresar
+        una contraseña!</p>
+      <p class="error-text texto-error-login" *ngIf="loginForm.controls['password'].errors?.['minlength']">La contraseña
+        debe tener almenos 6 caracteres!</p>
+    </div>
+
+    <ion-button (click)="setVarNombre()" [routerLink]="['/inicio']" expand="block" type="submit"
+      [disabled]="!loginForm.valid">Ingresar</ion-button>
+
+  </form>
+  <div class="center-content">
+    <ion-router-link [routerLink]="['/restablecer-contrasena']" color="primary" style="text-decoration: underline;">
+      Si olvidaste tu contraseña has click AQUI
+    </ion-router-link>
   </div>
 </ion-content>
 
