@@ -5,24 +5,23 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="ion-text-center">
-    <h1 style="color: #3880ff;">Restablece tu Contraseña</h1>
-    <ion-input type="email" placeholder="Correo Electrónico" 
-                label="Correo: " 
-                labelPlacement="floating"
-                ngModel email=""
-                errorText="E-mail NO VÁLIDO"
-      [clearInput]="true" text fill="solid"></ion-input>
-    <br><br>
-    <!-- REDIRECCIONA AL USUARIO -->
-    <ion-button [routerLink]="['/ingreso-de-usuario']" color="primary">
-      RECUPERA
-      <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
-    </ion-button>
-  </div>
-  <ion-buttons slot="start">
-    <ion-back-button defaultHref="ingreso-de-usuario"></ion-back-button>
-  </ion-buttons>
+  <form [formGroup]="resetForm" (submit)="onSubmit()">
+
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+    <div *ngIf="resetForm.controls['email'].invalid && resetForm.controls['email'].touched">
+      <p class="error-text texto-error-resetpw" *ngIf="resetForm.controls['email'].errors?.['required']">Correo
+        requerido!</p>
+      <p class="error-text texto-error-resetpw" *ngIf="resetForm.controls['email'].errors?.['email']">Ingrese un correo
+        valido!</p>
+    </div>
+
+    <ion-button [routerLink]="['/inicio']" expand="block" type="submit" [disabled]="!resetForm.valid">Recuperar
+      Contraseña</ion-button>
+
+  </form>
 </ion-content>
 
 <app-footer></app-footer>
